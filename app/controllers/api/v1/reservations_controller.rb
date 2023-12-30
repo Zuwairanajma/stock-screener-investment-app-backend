@@ -1,7 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :authenticate_token
   before_action :set_tutorial, only: %i[index create destroy show]
-  before_action :set_reservation, only: [:destroy, :show]
+  before_action :set_reservation, only: %i[destroy show]
 
   def index
     reservations = @package.reservations
@@ -12,14 +12,14 @@ class Api::V1::ReservationsController < ApplicationController
     if @reservation.user.id == @current_user.id
       render json: { reservation: @reservation, message: 'reservation' }, status: :ok
     else
-      render json: { errors: "This reservation does not belong to this user" }, status: :forbidden
+      render json: { errors: 'This reservation does not belong to this user' }, status: :forbidden
     end
   end
 
   def reservations
     reservations = @current_user.reservations
     @reservations_output = []
-  
+
     reservations.each do |reservation|
       x = {
         reservation: reservation.as_json.merge(packageName: reservation.package.name),
@@ -27,10 +27,9 @@ class Api::V1::ReservationsController < ApplicationController
       }
       @reservations_output << x
     end
-  
+
     render json: @reservations_output, status: :ok
   end
-  
 
   def create
     reservation = @package.reservations.build(reserve_params.merge(user: @current_user))
