@@ -133,7 +133,7 @@ If you like this project please show support by staring :star:️.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏Acknowledgments <a name="acknowledgements"></a>
-- I would like to extend our sincerest gratitude for [Murat Korkmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) for this beautiful design.
+- I would like to extend my sincerest gratitude for [Murat Korkmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) for this beautiful design.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
